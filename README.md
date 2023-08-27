@@ -67,6 +67,35 @@ By changing the architecture to include fewer filters in the convolutional layer
 The accuracy of the IC will be compared with software-based CNN implementations on the MNIST dataset.
 At each step of the design flow, the correctness of the system has been corroborated, in order to ensure its correct implementation at the IC level.
 
+# Workflow:
+The intricate design process for realizing the CNN-based circuit on hardware was orchestrated by a generative AI, ChatGPT-4. This AI-driven methodology facilitated a seamless transition from a high-level software representation to a hardware-efficient implementation. The workflow encompassed five pivotal stages:
+
+### CNN Creation with TensorFlow:
+
+ChatGPT-4 initiated the design by crafting the CNN using TensorFlow. This deep learning framework was leveraged by the AI to design, train, and evaluate the model on the MNIST dataset. With its trained model parameters and architectural details in hand, ChatGPT-4 proceeded to the subsequent stages.
+
+### Inference Function Implementation Without Libraries:
+
+The AI then re-architected the core essence of the neural network, the inference function, without depending on any high-level deep learning libraries. This purified and streamlined approach removed any TensorFlow overheads and provided a robust standalone function, setting the foundation for the next steps.
+
+### Translation to C++:
+
+Transitioning from the Python environment of TensorFlow to a more hardware-oriented language, ChatGPT-4 adeptly translated the inference function into C++. This transformation was pivotal as C++ caters better to low-level optimizations and interfaces more harmoniously with hardware synthesis tools.
+
+### Translation from C++ to High-Level Synthesis (HLS):
+
+With expertise in both software and hardware domains, ChatGPT-4 adeptly translated the C++ rendition into an HLS representation. HLS tools offer the ability to generate hardware description files directly from high-level code. After the translation, the outcome of the HLS process was a Verilog file, designed to encapsulate the operations and flow of the CNN. Utilizing HLS allowed the AI to finetune and optimize the design in alignment with specific hardware constraints, resulting in an efficient and streamlined Verilog blueprint.
+
+### Synthesis of the Verilog Code with Caravel:
+
+Caravel, a well-regarded framework for ASIC design, was employed to further synthesize the Verilog output from HLS. This hardware description language, once synthesized with Caravel, captures the circuit's precise behavior and structure, making it primed for deployment onto FPGA platforms or more intensive design phases leading to ASIC production.
+
+![image](https://github.com/Baungarten-CINVESTAV/AI_by_AI/assets/101527680/7dbcafe6-070c-4d56-8515-60a5cdccf61c)
+
+
+By integrating ChatGPT-4 into this workflow, the strengths of generative AI were seamlessly married with the rigor and precision of hardware design methodologies. This synergy resulted in a state-of-the-art, high-performance, and pinpoint accurate hardware representation of the CNN.
+
+
 # Forked from the Caravel User Project
 
 
