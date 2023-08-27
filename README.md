@@ -4,10 +4,10 @@
 
 Author: Emilio Baungarten
 
-Description: Integrated Circuit (IC) for a CNN-based MNIST Classifier using ChatGPT-4
+Description: CNN-based MNIST Classifier Integrated Circuit (IC) using ChatGPT-4
 
 ## Objective:
-Develop a dedicated hardware integrated circuit (IC) for a convolutional neural network (CNN) that classifies the MNIST dataset. The primary aim is for ChatGPT-4 to generate the RTL (Register-Transfer Level) code necessary to create the IC, incorporating insights and optimizations along the way.
+Develop a dedicated hardware Integrated Circuit (IC) for a Convolutional Neural Network (CNN) that classifies the MNIST dataset. The primary aim is for ChatGPT-4 to generate the Register-Transfer Level (RTL) code necessary to create the IC, incorporating insights and optimizations along the way.
 
 ## Background:
 The MNIST dataset is a well-known collection of handwritten digits widely used in the machine-learning community for benchmarking and testing. A CNN is particularly suited for image classification tasks like those posed by the MNIST dataset. By moving from software to a hardware implementation, we can achieve faster computation times and lower power consumption.
