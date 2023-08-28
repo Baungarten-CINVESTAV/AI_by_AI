@@ -52,16 +52,6 @@ Furthermore, the integration of AI in IC development has ushered in a new era of
 By changing the architecture to include fewer filters in the convolutional layers and adjusting pooling dimensions, we aim to create a more compact model, reducing computational complexity. Using the float16 data type can further reduce the memory footprint and potentially speed up calculations while retaining reasonable precision for the task of classifying MNIST images.
 
 ![CNN_arch](https://github.com/Baungarten-CINVESTAV/AI_by_AI/assets/101527680/e28288d8-dc1f-486e-94be-5f7f35e94a8a)
-
-
-## Hardware Specifications:
-* Digital logic gates
-* Register for Weights & Biases storage
-* Hardware multipliers and accumulators for convolution operations
-* Efficient pooling operation units
-* On-chip non-linear activation function units (ReLu)
-
-   Number of wires: 209315, Number of wire bits: 209933, Number of public wires: 209315, Number of public wire bits: 209933,  Number of cells: 209528.
   
 ## Testing and validation:
 The accuracy of the IC will be compared with software-based CNN implementations on the MNIST dataset.
