@@ -6,9 +6,9 @@ Within this directory, you'll find the interactions I've had with ChatGPT (GPT-4
 
 ## Multiple Chat Sessions: 
 
-The processors weren't developed in a single conversation. As the workflow illustrates, the process transitioned from Python to RTL code, encompassing four main sessions: CNN with TensorFlow, Python, C++, and HLS. Therefore, numerous chat interactions were needed to ensure a successful code implementationl.
+The processors weren't developed in a single conversation. As the workflow illustrates, the process transitioned from Python to RTL code, encompassing four main sessions: CNN with TensorFlow, Python, C++, and HLS. Therefore, numerous chat interactions were needed to ensure a successful code implementation.
 
-### This approach was adopted for a few reasons:
+**This approach was adopted for a few reasons:**
 
  * There's a text limitation for both input and output when using ChatGPT.
  * It ensures the generation of more accurate responses.
