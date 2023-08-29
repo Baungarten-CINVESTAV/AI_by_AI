@@ -23,9 +23,9 @@ After executing each step, a set of tests compared the current results with thos
 
 There were instances when ChatGPT would provide a series of similar, yet incorrect answers. Whenever this happened, it signaled the need to initiate a new chat session.
 
-# The Role of ChatGPT: T
+# The Role of ChatGPT:
 
-he AI supplied numerous sections  of code. These were then integrated into the main function step by step. To draw an analogy, imagine me as a project manager, and ChatGPT as a team of intern engineers creating varied codes on demand. However, it's crucial to remember that each intern engineer's response (AI response) can potentially be incomplete or contain errors. This underscores the importance of diligent oversight and verification at every stage of development.
+The AI supplied numerous sections  of code. These were then integrated into the main function step by step. To draw an analogy, imagine me as a project manager, and ChatGPT as a team of intern engineers creating varied codes on demand. However, it's crucial to remember that each intern engineer's response (AI response) can potentially be incomplete or contain errors. This underscores the importance of diligent oversight and verification at every stage of development.
 
 By Emilio Baungarten, September 2023
 
