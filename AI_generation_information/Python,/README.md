@@ -1,7 +1,7 @@
 # Python implementation
 
 ## USER
-Can you write a bare metal implementation of this CNN:
+Can you write a python bare metal implementation of this CNN:
 ```python
 model = models.Sequential()
 model.add(layers.Conv2D(4, (3, 3), activation='relu', input_shape=(28, 28, 1)))
