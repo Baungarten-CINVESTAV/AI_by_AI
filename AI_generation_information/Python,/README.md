@@ -219,3 +219,37 @@ for layer in model.layers:
     print(layer.get_config())
 ```
 This will print out a dictionary of each layer's configuration, including its name, activation function, whether it uses bias, and other details.
+
+# Functionality tests
+**Functionality tests were performed with the following code:**
+```python
+correct_predictions = 0
+#(x_train, y_train), (x_test, y_test) = mnist.load_data() #%%This was doing before
+# iterate over the test set
+#for i in range(len(x_test)):
+
+for i in range(10000):
+    # prepare the input
+    x = test_images[i].astype(np.float16)
+
+    # Ensure that the single image has the right shape (28, 28, 1)
+    single_image = np.reshape(x, (28, 28, 1))
+
+    #output = forward(single_image, weights_conv1, biases_conv1, weights_conv2, biases_conv2, weights_conv3, biases_conv3, weights_dense1, biases_dense1, weights_dense2, biases_dense2)
+    output = forward(single_image, weights_conv1, biases_conv1, weights_conv2, biases_conv2, weights_dense2, biases_dense2)
+
+    # Find the index of the maximum value
+    prediction = np.argmax(output)
+
+    # compare the prediction with the actual label
+    actual_label = np.argmax(test_labels[i])
+    #actual_label = test_labels[i]
+
+    if prediction == actual_label:
+        correct_predictions += 1
+
+# calculate the accuracy
+accuracy = correct_predictions / 10000
+print("The accuracy of the forward_pass function is:", accuracy)
+```
+```
