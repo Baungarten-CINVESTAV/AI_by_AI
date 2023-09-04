@@ -62,8 +62,10 @@ By changing the architecture to include fewer filters in the convolutional layer
 
 ### Pinout description
 
+<p align="center">
+
 | Caravel       | AI by AI      | Type|
-| ------------- | ------------- |------------- |
+|  :---: |  :---: |  :---: |
 | wb_clk_i   | ap_clk   | Input   |
 | la_data_in[1]  | in_ap_rst  | Input  |
 | io_in[35]  | in_ap_rst  | Input  |
@@ -78,7 +80,7 @@ By changing the architecture to include fewer filters in the convolutional layer
 | io_out[34]   | image_r_Clk_A   | output   |
 | N/A    | image_r_Rst_A   | output   |
 | la_data_out[31:28]    | ap_return   | output   |
-
+</p>
 
 
 ## Testing and validation:
