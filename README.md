@@ -7,12 +7,19 @@ Author: Emilio Baungarten
 Description: CNN-based MNIST Classifier Integrated Circuit (IC) using ChatGPT-4
 
 ## Objective:
+
+<p align="justify">
 Develop a dedicated hardware Integrated Circuit (IC) for a Convolutional Neural Network (CNN) that classifies the MNIST dataset. The main aim is for ChatGPT-4 to generate the Register-Transfer Level (RTL) code necessary to create the IC, incorporating insights and optimizations along the way.
+</p>
 
 ## Background:
-The MNIST dataset is a well-known collection of handwritten digits widely used in the machine-learning community for benchmarking and testing. A CNN is particularly suited for image classification tasks like those posed by the MNIST dataset. By moving from software to a hardware implementation, we can achieve faster computation times and lower power consumption.
 
+<p align="justify">
+The MNIST dataset is a well-known collection of handwritten digits widely used in the machine-learning community for benchmarking and testing. A CNN is particularly suited for image classification tasks like those posed by the MNIST dataset. By moving from software to a hardware implementation, we can achieve faster computation times and lower power consumption.
+</p>
+<p align="justify">
 Furthermore, the integration of AI in IC development has ushered in a new era of hardware design, where iterative processes and optimization techniques previously reserved for software can now be applied directly to hardware architectures. Using AI to facilitate and streamline the design process can lead to more efficient and effective IC designs that can adapt and evolve. Choosing the MNIST dataset for this venture serves as an ideal proof of concept, given its historical significance in machine learning. The fusion of AI-driven RTL code development, especially with tools like ChatGPT-4, and the time-tested MNIST dataset, symbolizes the confluence of the traditional and the cutting-edge in the world of computational design.
+</p>
 
 ## Components:
 1. Dataset: MNIST
@@ -60,7 +67,7 @@ By changing the architecture to include fewer filters in the convolutional layer
 <img src="https://github.com/Baungarten-CINVESTAV/AI_by_AI/assets/101527680/181bd530-28a7-42e6-a044-27f6fd596962" width=80% height=80%>
 </p>
 
-### Pinout description
+### Pinout
 
 <p align="center">
 
