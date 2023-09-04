@@ -59,7 +59,15 @@ By changing the architecture to include fewer filters in the convolutional layer
 <p align="center">
 <img src="https://github.com/Baungarten-CINVESTAV/AI_by_AI/assets/101527680/181bd530-28a7-42e6-a044-27f6fd596962" width=80% height=80%>
 </p>
+
 ### Pinout description
+
+| First Header  | AI by AI      | Second Header |
+| ------------- | ------------- |------------- |
+| Content Cell  | Content Cell  |Content Cell  |
+| Content Cell  | Content Cell  |Content Cell  |
+| Content Cell  | Content Cell  |Content Cell  |
+
 
 ## Testing and validation:
 
