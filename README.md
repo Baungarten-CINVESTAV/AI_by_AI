@@ -53,9 +53,20 @@ By changing the architecture to include fewer filters in the convolutional layer
 <p align="center">
 <img src="https://github.com/Baungarten-CINVESTAV/AI_by_AI/assets/101527680/e28288d8-dc1f-486e-94be-5f7f35e94a8a">
   </p>
+  
+## Block Diagram
+
+<p align="center">
+<img src="https://github.com/Baungarten-CINVESTAV/AI_by_AI/assets/101527680/181bd530-28a7-42e6-a044-27f6fd596962" width=80% height=80%>
+</p>
+### Pinout description
+
 ## Testing and validation:
+
 The accuracy of the IC will be compared with software-based CNN implementations on the MNIST dataset.
 At each step of the design flow, the correctness of the system has been corroborated, in order to ensure its correct implementation at the IC level.
+
+
 
 # Workflow:
 The intricate design process for realizing the CNN-based circuit on hardware was orchestrated by a generative AI, ChatGPT-4. This AI-driven methodology facilitated a seamless transition from a high-level software representation to a hardware-efficient implementation. The workflow encompassed five pivotal stages:
