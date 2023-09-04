@@ -50,9 +50,9 @@ Furthermore, the integration of AI in IC development has ushered in a new era of
       - Note: The data type for this layer is specifically set to float16.
 
 By changing the architecture to include fewer filters in the convolutional layers and adjusting pooling dimensions, we aim to create a more compact model, reducing computational complexity. Using the float16 data type can further reduce the memory footprint and potentially speed up calculations while retaining reasonable precision for the task of classifying MNIST images.
-
-![CNN_arch](https://github.com/Baungarten-CINVESTAV/AI_by_AI/assets/101527680/e28288d8-dc1f-486e-94be-5f7f35e94a8a)
-  
+<p align="center">
+<img src="https://github.com/Baungarten-CINVESTAV/AI_by_AI/assets/101527680/e28288d8-dc1f-486e-94be-5f7f35e94a8a">
+  </p>
 ## Testing and validation:
 The accuracy of the IC will be compared with software-based CNN implementations on the MNIST dataset.
 At each step of the design flow, the correctness of the system has been corroborated, in order to ensure its correct implementation at the IC level.
@@ -79,11 +79,21 @@ With expertise in both software and hardware domains, ChatGPT-4 adeptly translat
 ### Synthesis of the Verilog Code with Caravel:
 
 Caravel, a well-regarded framework for ASIC design, was employed to further synthesize the Verilog output from HLS. This hardware description language, once synthesized with Caravel, captures the circuit's precise behavior and structure, making it primed for deployment onto FPGA platforms or more intensive design phases leading to ASIC production.
-
-![image](https://github.com/Baungarten-CINVESTAV/AI_by_AI/assets/101527680/7dbcafe6-070c-4d56-8515-60a5cdccf61c)
-
+<p align="center">
+<img src="https://github.com/Baungarten-CINVESTAV/AI_by_AI/assets/101527680/7dbcafe6-070c-4d56-8515-60a5cdccf61c" width=80% height=80%>
+</p>
 
 By integrating ChatGPT-4 into this workflow, the strengths of generative AI were seamlessly married with the rigor and precision of hardware design methodologies. This synergy resulted in a state-of-the-art, high-performance, and pinpoint accurate hardware representation of the CNN.
+
+# Large Language Models conversation flowchart
+Large Language Models (LLMs) are a type of machine learning model designed to understand and generate human-like text based on vast amounts of data. They fall under the broader category of deep learning, and more specifically, they are a kind of recurrent neural network known as transformers. LLMs are trained on diverse datasets containing parts of the internet, which includes websites, books, articles, and other forms of written content. This helps them understand context, nuances, and the intricacies of human language.
+
+
+Using conversational models, there are countless ways to engage in a dialogue. However, to understand the potential for creating a uniform and automated process with these large language models, we've established a fixed, predefined conversation structure for a set of benchmarks.
+<p align="center">
+<img src="https://github.com/Baungarten-CINVESTAV/AI_by_AI/assets/101527680/80ef5644-7ef0-4402-abce-fa2fa61da126" width=60% height=60% />
+</p>
+LLM conversation flowchart
 
 
 # Forked from the Caravel User Project
