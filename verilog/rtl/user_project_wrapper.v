@@ -13,7 +13,7 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
+`default_nettype wire
 /*
  *-------------------------------------------------------------
  *
@@ -82,42 +82,97 @@ module user_project_wrapper #(
 /* User project is instantiated  here   */
 /*--------------------------------------*/
 
-user_proj_example mprj (
-`ifdef USE_POWER_PINS
-	.vccd1(vccd1),	// User area 1 1.8V power
-	.vssd1(vssd1),	// User area 1 digital ground
-`endif
+  wire in_ap_rst;
+  wire _in_ap_start;
+  wire _ap_done;
+  wire _ap_idle;
+  wire _ap_ready;
 
-    .wb_clk_i(wb_clk_i),
-    .wb_rst_i(wb_rst_i),
+  wire [31:0] _image_r_Addr_A;
+  wire _image_r_EN_A;
+  wire [1:0] _image_r_WEN_A;
+  wire [15:0] _image_r_Din_A;
+  wire [15:0] i_in_image_r_Dout_A;
+  wire   _image_r_Clk_A;
+  wire   _image_r_Rst_A;
+  
 
-    // MGMT SoC Wishbone Slave
+ wire  [3:0] _ap_return;
+ 
+ assign in_ap_rst = la_data_in[1]|io_in[30+5];
+ assign io_oeb[30]=1;
 
-    .wbs_cyc_i(wbs_cyc_i),
-    .wbs_stb_i(wbs_stb_i),
-    .wbs_we_i(wbs_we_i),
-    .wbs_sel_i(wbs_sel_i),
-    .wbs_adr_i(wbs_adr_i),
-    .wbs_dat_i(wbs_dat_i),
-    .wbs_ack_o(wbs_ack_o),
-    .wbs_dat_o(wbs_dat_o),
+ assign  _in_ap_start = la_data_in[2];
+ assign la_data_out[3]=_ap_done;
+ assign  la_data_out[4]=_ap_idle;
+ assign  la_data_out[5]=_ap_ready;
+ assign  la_data_out[31:28] = _ap_return;
+ 
+ 
+ //DEfault to avoid errors
+ assign la_data_out[2:0] = 3'b0;
+  assign la_data_out[27:6] = 22'b0;
+  assign la_data_out[127:32] = 96'b0;
+  assign wbs_ack_o = 1'b0;
+  assign wbs_dat_o = 0;
+  assign user_irq = 3'b0;
+  assign io_oeb[4:0] = 4'd0;
+  assign io_out[4:0] = 4'd0;
+assign io_oeb[37:35] = 3'd0;
+assign io_out[33:18] = 0;
+assign io_out[37:35] = 3'd0;
+ //External memory controls
+  assign io_out[11+5:0+5] = _image_r_Addr_A[11:0]; //Addres
+  assign io_oeb[11+5:0+5] = 11'b0;
+  
+  assign io_out[12+5] = _image_r_EN_A; //r_Enb
+  assign io_oeb[12+5]=0;
+   
+  assign i_in_image_r_Dout_A = io_in[28+5:13+5]; //Data_input
+   assign io_oeb[28+5:13+5]=16'hFFFF;
+  
+  assign io_out[29+5] = _image_r_Clk_A; //CLK
+   assign io_oeb[29+5]=0;
 
-    // Logic Analyzer
+/////////////connections//////////////////
+/*
+ap_clk ----->  wb_clk_i
+ap_rst ----->  la_data_in[1]|io_in[30]
 
-    .la_data_in(la_data_in),
-    .la_data_out(la_data_out),
-    .la_oenb (la_oenb),
+	ap_start ----->  la_data_out[2]
+	ap_done ----->  la_data_out[3]
+	ap_idle ----->  la_data_out[4]
+	ap_ready ----->  la_data_out[5]
+	ap_return ----->  la_data_out[31:28]
 
-    // IO Pads
+	
+image_r_Addr_A ----->  io_out[11:0]
+image_r_EN_A ----->  io_out[12] 
+image_r_WEN_A ----->  N/A
+image_r_Din_A ----->  N/A
+image_r_Dout_A ----->  o_in[28:13]
+image_r_Clk_A ----->  io_out[29]
+image_r_Rst_A ----->  N/A
 
-    .io_in ({io_in[37:30],io_in[7:0]}),
-    .io_out({io_out[37:30],io_out[7:0]}),
-    .io_oeb({io_oeb[37:30],io_oeb[7:0]}),
+*/
 
-    // IRQ
-    .irq(user_irq)
-);
+  forward_pass AI_by_AI (
+    .ap_clk(wb_clk_i),
+    .ap_rst(in_ap_rst),
+    .ap_start(_in_ap_start),
+    .ap_done(_ap_done),
+    .ap_idle(_ap_idle),
+    .ap_ready(_ap_ready),
+    .image_r_Addr_A(_image_r_Addr_A),
+    .image_r_EN_A(_image_r_EN_A),
+    .image_r_WEN_A(_image_r_WEN_A), //We just read the memory dont write in it
+    .image_r_Din_A(_image_r_Din_A),
+    .image_r_Dout_A(i_in_image_r_Dout_A),
+    .image_r_Clk_A(_image_r_Clk_A),
+    .image_r_Rst_A(_image_r_Rst_A),
+    .ap_return(_ap_return)
+	 
+  );
 
-endmodule	// user_project_wrapper
-
+endmodule
 `default_nettype wire
