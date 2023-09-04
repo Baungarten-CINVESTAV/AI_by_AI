@@ -66,7 +66,10 @@ By changing the architecture to include fewer filters in the convolutional layer
 
 | Caravel       | AI by AI      | Type|
 |  :---: |  :---: |  :---: |
-| wb_clk_i   | ap_clk   | Input   |
+| wb_clk_i   | o_mux_clk   | Input   |
+| io_in[36]    | o_mux_clk   | Input   |
+| io_in[37]    | s_mux_clk   | Input   |
+| o_mux_clk  | ap_clk   | Input   |
 | la_data_in[1]  | in_ap_rst  | Input  |
 | io_in[35]  | in_ap_rst  | Input  |
 | io_in[35]  | ap_start   | Input |
